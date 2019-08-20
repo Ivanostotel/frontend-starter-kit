@@ -1,10 +1,20 @@
-import Sample from './models/sample_model.js';
+import ComponentBoxes from './models/component_boxes.js';
 
 const ready = () => {
   console.log('DOM fully loaded and parsed');
 
-  let sample = new Sample('works');
-  sample.writeToConsole();
+  let paramsForBoxes = [];
+
+  paramsForBoxes.class = 'test';
+  paramsForBoxes.type = 'regular';
+  paramsForBoxes.title = 'This is test title.'
+  paramsForBoxes.description = 'This is a test description which is not very long but should do the trick.'
+  paramsForBoxes.image = '../assets/images/300x300-image.jpg';
+  paramsForBoxes.location = '#locForBoxes';
+  paramsForBoxes.endpoint = 'https://localhost:44300/api/values';
+
+  let boxes = new ComponentBoxes(paramsForBoxes);
+  boxes.renderComponent();
 
   /**
    * Inline external svg sprite to all pages

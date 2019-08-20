@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     "no-unused-vars": "off",
     "no-console": "off",
-    "object-shorthand": "off"
+    "object-shorthand": "off",
+    "max-len": "off"
   },
 };
